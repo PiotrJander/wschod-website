@@ -9,9 +9,7 @@ module.exports = {
     join: "https://actionnetwork.org/forms/dolacz-do-wschodu/",
     newsletter: "https://actionnetwork.org/forms/newsletter_wschod",
     donate: "https://zrzutka.pl/yf5zmd",
-    privacy: "https://www.wschod.org/polityka-prywatnosci",
-    donationPolicy:
-      "https://drive.google.com/file/d/1UmxzKfnuwHJ6G9v6JZIubOVVYpP6Dr2o/view",
+    privacy: "/polityka-prywatnosci/",
     instagram: "https://www.instagram.com/wschod_/",
     tiktok: "https://www.tiktok.com/@wschod__",
     facebook: "https://www.facebook.com/wschod2022",

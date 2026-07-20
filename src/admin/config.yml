@@ -64,3 +64,9 @@ collections:
           - { label: "Plik PDF", name: "pdf", widget: "file" }
           - { label: "Liczba stron", name: "pages", widget: "string", required: false }
           - { label: "Rok", name: "year", widget: "string", required: false }
+      - name: "donationPolicy"
+        label: "Polityka darowizn (PDF)"
+        file: "src/_data/donationPolicy.json"
+        description: "Dokument PDF linkowany w stopce."
+        fields:
+          - { label: "Plik PDF", name: "pdf", widget: "file" }
