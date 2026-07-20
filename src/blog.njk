@@ -4,6 +4,7 @@ permalink: /blog/
 title: Artykuły — Inicjatywa WSCHÓD
 description: Relacje z naszych akcji, eseje, zaproszenia. Krótkie newsy i dłuższe teksty o tym, jak myśleć o polityce i kryzysach naszych czasów.
 ---
+{% import "partials/wave.njk" as wave %}
 {%- set posts = collections.posts %}
 {%- set featured = posts[0] %}
       <section class="blog-hero">
@@ -17,6 +18,8 @@ description: Relacje z naszych akcji, eseje, zaproszenia. Krótkie newsy i dłu�
           </p>
         </div>
       </section>
+
+      {{ wave.divider("blog-peach-cream", "var(--peach)", "oklch(0.96 0.025 80)", "oklch(0.985 0.015 85)") }}
 
       <section class="section panel--cream">
         <div class="container">
@@ -67,6 +70,8 @@ description: Relacje z naszych akcji, eseje, zaproszenia. Krótkie newsy i dłu�
           {%- endif %}
         </div>
       </section>
+
+      {{ wave.divider("blog-cream-blue", "var(--cream)", "oklch(0.46 0.24 268)", "oklch(0.55 0.21 268)") }}
 
       <section class="section panel--blue">
         <div class="container" style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;">

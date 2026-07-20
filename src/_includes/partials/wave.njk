@@ -1,0 +1,25 @@
+{#
+  Gradient wave divider between two coloured panels.
+    id    — unique per page (used for the gradient defs)
+    top   — colour of the panel ABOVE (fills the divider background)
+    base  — colour of the panel BELOW (deepest tone of the wave)
+    light — a slightly lighter tone of the panel below (wave crest)
+  Two overlapping curves give an organic, layered feel; the front curve
+  carries a subtle vertical gradient so the colour reads as gradient-y.
+#}
+{% macro divider(id, top, base, light) %}
+<div class="wave-divider" aria-hidden="true" style="--wd-top: {{ top }};">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="wd-{{ id }}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="{{ light }}" />
+        <stop offset="1" stop-color="{{ base }}" />
+      </linearGradient>
+    </defs>
+    <path d="M0,44 C240,96 480,12 720,46 C960,78 1200,18 1440,50 L1440,110 L0,110 Z"
+          fill="{{ light }}" opacity="0.5" />
+    <path d="M0,66 C240,114 480,34 720,66 C960,94 1200,42 1440,70 L1440,110 L0,110 Z"
+          fill="url(#wd-{{ id }})" />
+  </svg>
+</div>
+{% endmacro %}

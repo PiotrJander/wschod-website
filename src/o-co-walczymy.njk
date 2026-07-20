@@ -4,6 +4,7 @@ permalink: /o-co-walczymy/
 title: O co walczymy? — Inicjatywa WSCHÓD
 description: Dziewięć filarów manifestu Plan Na Pokolenia — od energetyki i rolnictwa po godną młodość. Konkretne postulaty, nie hasła.
 ---
+{% import "partials/wave.njk" as wave %}
       <section class="walczymy-hero">
         <div class="container grid">
           <div>
@@ -25,6 +26,8 @@ description: Dziewięć filarów manifestu Plan Na Pokolenia — od energetyki i
           </div>
         </div>
       </section>
+
+      {{ wave.divider("walcz-peach-paper", "var(--peach)", "oklch(0.985 0.005 80)", "oklch(0.995 0.003 85)") }}
 
       <section class="section panel--paper">
         <div class="container">
@@ -98,6 +101,8 @@ description: Dziewięć filarów manifestu Plan Na Pokolenia — od energetyki i
           </div>
         </div>
       </section>
+
+      {{ wave.divider("walcz-paper-coral", "var(--paper)", "oklch(0.72 0.22 30)", "oklch(0.79 0.19 34)") }}
 
       <section class="section panel--coral">
         <div class="container" style="display:grid;gap:2rem;align-items:center;text-align:center;">

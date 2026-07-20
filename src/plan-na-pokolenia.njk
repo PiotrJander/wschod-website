@@ -5,6 +5,7 @@ title: Plan Na Pokolenia — Inicjatywa WSCHÓD
 description: 33-stronicowy manifest Inicjatywy WSCHÓD. Dziewięć filarów, setki postulatów. Pobierz dokument i poprzyj.
 ogImage: /images/plan-cover.png
 ---
+{% import "partials/wave.njk" as wave %}
       <section class="plan-hero">
         <div class="container">
           <span class="eyebrow" style="color: var(--amber); opacity: 1;">Inicjatywa WSCHÓD &middot; {{ plan.year }}</span>
@@ -39,6 +40,8 @@ ogImage: /images/plan-cover.png
           </div>
         </div>
       </section>
+
+      {{ wave.divider("plan-blue-cream", "var(--blue)", "oklch(0.96 0.025 80)", "oklch(0.985 0.015 85)") }}
 
       <section class="plan-pillars-section panel--cream">
         <div class="container">

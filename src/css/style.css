@@ -352,6 +352,21 @@
   }
   .wave path { transform-origin: center; }
 
+  /* Gradient wave divider between coloured panels (see partials/wave.njk).
+     The div's background continues the panel above; the SVG paints the panel
+     below rising into it along a wavy, subtly-graded edge. */
+  .wave-divider {
+    display: block;
+    width: 100%;
+    line-height: 0;
+    background: var(--wd-top);
+  }
+  .wave-divider svg {
+    display: block;
+    width: 100%;
+    height: clamp(48px, 7vw, 104px);
+  }
+
   /* ─── Photo card with caption ─── */
   .photo {
     position: relative;

@@ -4,6 +4,7 @@ permalink: /kim-jestesmy/
 title: Kim jesteśmy? — Inicjatywa WSCHÓD
 description: Wschód to oddolna, ogólnopolska inicjatywa młodych aktywistek i aktywistów. Poznaj naszą historię i wartości.
 ---
+{% import "partials/wave.njk" as wave %}
       <section class="kim-hero">
         <div class="container grid">
           <div>
@@ -26,6 +27,8 @@ description: Wschód to oddolna, ogólnopolska inicjatywa młodych aktywistek i 
           </div>
         </div>
       </section>
+
+      {{ wave.divider("kim-peach-cream", "var(--peach)", "oklch(0.96 0.025 80)", "oklch(0.985 0.015 85)") }}
 
       <section class="section panel--cream">
         <div class="container kim-body">
@@ -87,6 +90,8 @@ description: Wschód to oddolna, ogólnopolska inicjatywa młodych aktywistek i 
           </div>
         </div>
       </section>
+
+      {{ wave.divider("kim-cream-blue", "var(--cream)", "oklch(0.46 0.24 268)", "oklch(0.55 0.21 268)") }}
 
       <section class="section panel--blue">
         <div class="container" style="display:grid;gap:2rem;grid-template-columns:1fr;align-items:center;">
