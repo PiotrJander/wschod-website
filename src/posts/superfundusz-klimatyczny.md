@@ -4,7 +4,7 @@ date: 2026-07-20
 category: Aktualności
 readingTime: 3 min
 author: Zespół Inicjatywy WSCHÓD
-cover: /images/uploads/superfundusz.png
+cover: /images/superfundusz.png
 excerpt: Polska mierzy się aktualnie z największym od dekad kataklizmem
   wynikającym ze zmiany klimatu - powodzią, która dotknęła już tysiące osób w
   południowej części kraju, a wciąż może wyrządzić kolejne szkody. Miliony z nas

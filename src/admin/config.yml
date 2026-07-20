@@ -13,6 +13,13 @@ public_folder: "/images"
 
 locale: "pl"
 
+# Clean, URL-safe slugs: transliterate Polish accents (ć→c, ż→z, …) and drop
+# punctuation like curly quotes so filenames/URLs stay ASCII and tidy.
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
 collections:
   - name: "posts"
     label: "Artykuły"
