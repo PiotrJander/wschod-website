@@ -373,6 +373,10 @@
     overflow: hidden;
     border-radius: var(--radius);
     background: oklch(0.4 0.05 270);
+    /* Allow the figure to shrink below the image's intrinsic width inside grid
+       tracks — otherwise WebKit's min-width:auto blows the track out and the
+       whole section overflows horizontally on mobile. */
+    min-width: 0;
   }
   .photo img {
     width: 100%;
@@ -708,12 +712,14 @@
   /* ─── HOME · "revolution" card ─── */
   .revolution {
     display: grid;
-    grid-template-columns: 1fr;
+    /* minmax(0, …) lets tracks shrink below content/aspect-ratio min-size,
+       preventing WebKit's grid blow-out (lazy image + aspect-ratio) on mobile. */
+    grid-template-columns: minmax(0, 1fr);
     gap: 2rem;
     align-items: center;
   }
   @media (min-width: 760px) {
-    .revolution { grid-template-columns: 1fr 1.2fr; }
+    .revolution { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); }
   }
   .revolution .photo { aspect-ratio: 3/4; max-height: 600px; }
   .revolution .card {
@@ -766,12 +772,12 @@
   /* ─── HOME · Plan tease ─── */
   .plan-tease {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
     align-items: center;
   }
   @media (min-width: 880px) {
-    .plan-tease { grid-template-columns: 0.9fr 1.1fr; gap: 4rem; }
+    .plan-tease { grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 4rem; }
   }
   .plan-tease .photo {
     aspect-ratio: 3/4;
@@ -806,11 +812,11 @@
   /* ─── HOME · support block ─── */
   .support {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 2.5rem;
   }
   @media (min-width: 880px) {
-    .support { grid-template-columns: 1.2fr 1fr; gap: 4rem; }
+    .support { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 4rem; }
   }
   .support h2 {
     font-style: italic;
@@ -906,9 +912,14 @@
   }
   .values {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 0.7rem;
     margin-block-start: 1.5rem;
+  }
+  /* Two columns only once there's room; a single column on phones keeps the
+     value cards even instead of a cramped, ragged 2-up grid. */
+  @media (min-width: 560px) {
+    .values { grid-template-columns: 1fr 1fr; }
   }
   .value {
     background: var(--paper);
@@ -1107,7 +1118,7 @@
     overflow: hidden;
   }
   @media (min-width: 760px) {
-    .blog-featured { grid-template-columns: 1.1fr 1fr; }
+    .blog-featured { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); }
   }
   .blog-featured .photo {
     aspect-ratio: 16/10;
