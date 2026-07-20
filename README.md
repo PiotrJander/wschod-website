@@ -58,7 +58,8 @@ src/
   blog.njk              # article list             → /blog/
   posts/                # articles (Markdown)      → /blog/<slug>/
   admin/                # Decap CMS panel          → /admin/
-  images/               # all media (brand assets + CMS uploads)
+  images/               # static brand assets (logos, hero photos, …)
+    uploads/            # CMS-managed media (blog images + Plan PDF)
 ```
 
 ## Deploying to Netlify

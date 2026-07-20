@@ -6,10 +6,11 @@ backend:
 # then open http://localhost:8080/admin/ — no auth required locally.
 local_backend: true
 
-# The media library lists everything in this folder, so all existing brand
-# photos in src/images are pickable and new uploads land alongside them.
-media_folder: "src/images"
-public_folder: "/images"
+# CMS-managed media (blog images, the Plan PDF) lives in its own uploads/
+# folder, kept separate from static brand assets in src/images. New uploads
+# from the editor land here; the media library lists this folder.
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
 
 locale: "pl"
 
