@@ -1182,6 +1182,44 @@
   .blog-featured h2 a:hover,
   .article-card h3 a:hover { color: var(--coral-deep); }
 
+  /* ─── Legal / document page (privacy policy, …) ───
+     A calmer, more neutral reading page: sans-serif headings instead of the
+     funky display serif, since dense legal copy reads better plain. */
+  .legal-hero {
+    background: var(--peach);
+    padding-block: clamp(4rem, 2rem + 5vw, 7rem) clamp(2.5rem, 1.5rem + 2vw, 4rem);
+  }
+  .legal-hero h1 {
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-variation-settings: normal;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    font-size: clamp(2.2rem, 1.6rem + 3vw, 3.6rem);
+    color: var(--coral-deep);
+    margin-block-start: 1rem;
+  }
+  .legal-hero p {
+    color: var(--ink-2);
+    font-size: var(--fs-lede);
+    max-width: 60ch;
+    margin-block-start: 1rem;
+  }
+  /* Higher specificity than the later ".prose h2/h3" rules so the neutral
+     sans headings actually win. */
+  .prose.prose--legal h2,
+  .prose.prose--legal h3 {
+    font-family: var(--font-sans);
+    font-style: normal;
+    font-variation-settings: normal;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .prose.prose--legal h2 { font-size: 1.5rem; font-weight: 700; }
+  .prose.prose--legal h3 { font-size: 1.15rem; font-weight: 700; margin-block-start: 1.8rem; }
+  .legal-updated { margin-block-start: 2.5rem; }
+
   /* ═══════════════════════════════════════════════════════════
                    BLOG POST · single article
      A calm, editorial reading experience that keeps the loud

@@ -1,0 +1,23 @@
+---
+layout: base.njk
+---
+      <section class="legal-hero">
+        <div class="container-narrow">
+          <span class="eyebrow">dokument</span>
+          <h1>{{ heading or title }}</h1>
+          {%- if intro %}
+          <p>{{ intro }}</p>
+          {%- endif %}
+        </div>
+      </section>
+
+      <section class="section panel--cream">
+        <div class="container-narrow">
+          <div class="prose prose--legal">
+            {{ content | safe }}
+          </div>
+          {%- if lastUpdated %}
+          <p class="legal-updated mute"><em>Data ostatniej aktualizacji: {{ lastUpdated }}</em></p>
+          {%- endif %}
+        </div>
+      </section>

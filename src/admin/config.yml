@@ -52,6 +52,24 @@ collections:
       - { label: "Zajawka (lead)", name: "excerpt", widget: "text" }
       - { label: "Treść", name: "body", widget: "markdown" }
 
+  - name: "pages"
+    label: "Strony"
+    description: "Strony treściowe."
+    files:
+      - name: "privacy"
+        label: "Polityka prywatności"
+        file: "src/polityka-prywatnosci.md"
+        preview_path: "polityka-prywatnosci/"
+        fields:
+          - { label: "Nagłówek", name: "heading", widget: "string" }
+          - { label: "Wprowadzenie", name: "intro", widget: "text" }
+          - { label: "Treść", name: "body", widget: "markdown" }
+          - { label: "Data aktualizacji", name: "lastUpdated", widget: "string", required: false }
+          - { label: "Tytuł (SEO)", name: "title", widget: "string" }
+          - { label: "Opis (SEO)", name: "description", widget: "text", required: false }
+          - { label: "Layout", name: "layout", widget: "hidden", default: "legal.njk" }
+          - { label: "Ścieżka", name: "permalink", widget: "hidden", default: "/polityka-prywatnosci/" }
+
   - name: "settings"
     label: "Ustawienia"
     description: "Globalne pliki i zasoby."
