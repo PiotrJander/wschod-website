@@ -1,0 +1,214 @@
+---
+layout: base.njk
+permalink: /
+title: Inicjatywa WSCHÓD — zapowiada nowy dzień
+description: WSCHÓD to ogólnopolski ruch młodych aktywistów_ek walczących o sprawiedliwą, bezpieczną i godną Polskę dla wszystkich.
+ogImage: /images/glowna1.jpg
+---
+    <!-- ════════════════════════════════════════════════════════════
+                                  HOME
+       ════════════════════════════════════════════════════════════ -->
+
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-bg">
+          <img src="/images/glowna1.jpg" alt="Demonstracja, aktywistka z megafonem przed kordonem policji" loading="eager" />
+        </div>
+        <div class="container">
+          <span class="eyebrow">Inicjatywa &middot; 2022 — dziś</span>
+          <h1 class="hero-mega">wschód <span class="accent">/</span><br/>zapowiada<br/>nowy dzień.</h1>
+          <p class="hero-tag">
+            My walczymy, żeby był godny i&nbsp;bezpieczny &mdash; dla&nbsp;nas wszystkich.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn--coral btn--lg" href="/plan-na-pokolenia/">
+              Poznaj nasz plan <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="btn btn--ghost btn--lg" href="{{ site.links.join }}" target="_blank" rel="noopener">Dołącz do nas</a>
+          </div>
+          <div class="hero-counter">
+            <div><strong>500+</strong>aktywistek i&nbsp;aktywistów</div>
+            <div><strong>20</strong>miast w&nbsp;całej Polsce</div>
+            <div><strong>4</strong>edycje obozu&nbsp;letniego</div>
+            <div><strong>9</strong>filarów Planu&nbsp;Na&nbsp;Pokolenia</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Slogan marquee -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>godność dla milionów, nie dla milionerów</span>
+          <span>klimat to nie luksus</span>
+          <span>mieszkanie to prawo, nie towar</span>
+          <span>polityka troski</span>
+          <span>plan na pokolenia</span>
+          <span>godność dla milionów, nie dla milionerów</span>
+          <span>klimat to nie luksus</span>
+          <span>mieszkanie to prawo, nie towar</span>
+          <span>polityka troski</span>
+          <span>plan na pokolenia</span>
+        </div>
+      </div>
+
+      <!-- kim jesteśmy intro -->
+      <section class="section panel--peach">
+        <div class="container kim-intro">
+          <div>
+            <span class="eyebrow">01 &middot; kim jesteśmy</span>
+            <h2 style="margin-block-start: 1.2rem;">jesteśmy ogólnopolskim ruchem młodych ludzi.</h2>
+            <a class="btn btn--ink" href="/kim-jestesmy/" style="margin-block-start:1.6rem;">
+              Poznaj nas <span class="arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+          <div>
+            <p>
+              Wschód łączy ludzi gotowych do walki o godne i&nbsp;bezpieczne życie dla wszystkich.
+              Chcemy głębokiej zmiany w&nbsp;polityce, a&nbsp;żeby ją osiągnąć &mdash;
+              budujemy społeczne poparcie dla&nbsp;<strong>Planu Na Pokolenia</strong>:
+              naszej odważnej wizji działań, które mogą wyprowadzić nas z&nbsp;obecnych kryzysów.
+            </p>
+            <p style="margin-block-start: 1rem;">
+              Działamy oddolnie, demokratycznie, międzypokoleniowo i&nbsp;intersekcjonalnie.
+              Łączymy klimat ze sprawiedliwością społeczną, prawa pracownicze z&nbsp;prawami osób LGBTQ+,
+              mieszkalnictwo z&nbsp;ochroną przyrody &mdash; bo&nbsp;wiemy, że bez całościowego podejścia
+              nie ma mowy o&nbsp;skutecznej zmianie.
+            </p>
+            <div class="kim-stats">
+              <div class="kim-stat"><div class="v">500+</div><div class="l">aktywnych osób w całej Polsce</div></div>
+              <div class="kim-stat"><div class="v">20</div><div class="l">miast z lokalnymi grupami</div></div>
+              <div class="kim-stat"><div class="v">9</div><div class="l">filarów manifestu Plan Na Pokolenia</div></div>
+              <div class="kim-stat"><div class="v">4</div><div class="l">edycje letniego obozu aktywistycznego</div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- jesteśmy rewolucją -->
+      <section class="section panel--peach" style="padding-block-start: 0;">
+        <div class="container revolution">
+          <figure class="photo photo--tall reveal">
+            <img src="/images/silence-fuck-you.png" alt="Aktywistka, palec na ustach, gest ciszy podczas manifestacji" loading="lazy" />
+            <span class="credit">fot. archiwum Wschodu</span>
+          </figure>
+          <div class="card reveal">
+            <span class="eyebrow" style="opacity:0.7;">02 &middot; newsletter</span>
+            <h3>jesteśmy rewolucją.</h3>
+            <p>
+              Co tydzień wysyłamy krótki list o&nbsp;tym, co planujemy, jak działać i&nbsp;jak myśleć
+              o&nbsp;polityce inaczej niż gazety. Bez clickbaitu, bez prośby o&nbsp;darowiznę co drugi mail.
+              Tylko konkrety, refleksje i&nbsp;zaproszenia do działania.
+            </p>
+            <form class="newsletter" action="{{ site.links.newsletter }}" method="get" target="_blank" onsubmit="event.preventDefault(); window.open(this.action, '_blank');">
+              <input type="email" placeholder="twój@email.pl" required aria-label="Adres email" />
+              <button type="submit">Zapisz się</button>
+            </form>
+            <p style="font-size:0.8rem; color: oklch(0.96 0.02 80 / 0.6); margin-block-start:-4px;">
+              Możesz wypisać się jednym kliknięciem. Nie udostępniamy adresów nikomu.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- o co walczymy - full bleed coral -->
+      <section class="section panel--coral">
+        <div class="container fight-block">
+          <div class="reveal">
+            <span class="eyebrow" style="color: var(--on-coral);">03 &middot; o co walczymy</span>
+            <h2 style="margin-block-start: 1rem;">polityka <em>dla&nbsp;ludzi</em>, a nie dla&nbsp;wielkiego biznesu.</h2>
+          </div>
+          <div class="reveal">
+            <p>
+              Chcemy całkowicie przedefiniować priorytety polskiej sceny politycznej &mdash;
+              odejść od skupienia na zyskach nielicznych, skończyć z&nbsp;nieuczciwym podziałem
+              bogactwa, zapewnić ludziom uznanie ich praw i&nbsp;odpowiedź na ich potrzeby,
+              oraz położyć kres wyzyskowi planety.
+            </p>
+            <p style="margin-block-start:1rem;">
+              Mówimy o&nbsp;<strong>godnym życiu &mdash; nie jako przywileju, ale jako niezbywalnym prawie</strong>,
+              które należy się każdemu i&nbsp;każdej z&nbsp;nas.
+            </p>
+            <div class="actions">
+              <a class="btn btn--ink" href="/o-co-walczymy/">
+                9 filarów manifestu <span class="arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- plan tease -->
+      <section class="section panel--cream">
+        <div class="container plan-tease">
+          <figure class="photo photo--tall reveal">
+            <img src="/images/plan-cover.png" alt="Okładka manifestu Plan Na Pokolenia" loading="lazy" />
+          </figure>
+          <div class="reveal">
+            <span class="eyebrow">04 &middot; manifest</span>
+            <h2 style="margin-block-start: 1.2rem;"><em>Plan Na&nbsp;Pokolenia.</em> Konkretny. Spisany. Do podpisania.</h2>
+            <p class="lede">
+              33-stronicowy dokument, który powstał po dwóch latach rozmów z&nbsp;ekspertkami,
+              pracownikami, mieszkankami wsi i&nbsp;miast, z&nbsp;młodzieżą i&nbsp;z&nbsp;tymi,
+              którzy zostali z&nbsp;tyłu polskiej transformacji. <strong>9 filarów. Setki postulatów.</strong>
+            </p>
+            <div class="actions">
+              <a class="btn btn--coral btn--lg" href="{{ plan.pdf }}" target="_blank">
+                Pobierz dokument <span class="arrow" aria-hidden="true">↓</span>
+              </a>
+              <a class="btn btn--jade btn--lg" href="/plan-na-pokolenia/">Poprzyj i podpisz</a>
+            </div>
+            <div class="meta">PDF · {{ plan.pages }} strony · {{ plan.year }}</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- wspieraj -->
+      <section class="section panel--peach">
+        <div class="container support">
+          <div class="reveal">
+            <span class="eyebrow">05 &middot; wspieraj nas</span>
+            <h2 style="margin-block-start: 1.2rem;">utrzymujemy się <em>ze&nbsp;składek i&nbsp;darowizn.</em></h2>
+            <p class="lede" style="margin-block-start:1rem;">
+              Nie bierzemy pieniędzy od spółek skarbu państwa, nie bierzemy od partii.
+              Każda złotówka pochodzi od ludzi takich jak Ty &mdash; i&nbsp;to ona pozwala nam
+              robić to, co robimy: organizować, mobilizować, pisać, protestować.
+            </p>
+            <div class="iban-card">
+              <div class="label">Numer konta · Fundacja Inicjatywa Wschód</div>
+              <div class="iban">48&nbsp;1140&nbsp;2004&nbsp;0000&nbsp;3802&nbsp;8553&nbsp;6164</div>
+              <div class="meta">
+                mBank S.A.<br/>
+                ul. Mikołaja Kopernika 30, 00-336 Warszawa
+              </div>
+              <button class="copy" id="copyIban" type="button" data-iban="48 1140 2004 0000 3802 8553 6164">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+                Skopiuj numer
+              </button>
+            </div>
+          </div>
+          <figure class="photo photo--wide reveal" style="aspect-ratio: 4/5; max-height: 560px;">
+            <img src="/images/konrad.jpg" alt="Zespół Inicjatywy Wschód w biurze przy oknie" loading="lazy" />
+            <span class="credit">fot. Konrad Skotnicki</span>
+          </figure>
+        </div>
+      </section>
+
+      <!-- stronger roots / partners -->
+      <section class="section section--tight panel--paper">
+        <div class="container">
+          <div style="display:grid; gap:1.5rem; grid-template-columns:1fr; align-items:center;" class="reveal">
+            <div>
+              <span class="eyebrow">Wsparcie instytucjonalne</span>
+              <h3 style="margin-block-start: 0.8rem; font-size: var(--fs-h2); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 60;">stronger roots.</h3>
+              <p style="margin-block-start: 0.8rem; max-width: 60ch; color: var(--ink-mute); font-size: 0.95rem;">
+                Część naszych działań wspiera Fundacja im.&nbsp;Stefana Batorego w&nbsp;ramach programu
+                <em>Stronger Roots</em>, finansowanego przez Unię Europejską z&nbsp;programu
+                <em>Obywatele, Równość, Prawa i&nbsp;Wartości</em> (CERV). Program wzmacnia odporność
+                i&nbsp;stabilność organizacji społecznych oraz ich relacje ze społeczeństwem.
+                Wyrażone tu poglądy są poglądami autorów_ek i&nbsp;niekoniecznie odzwierciedlają
+                stanowisko Unii Europejskiej.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>

@@ -1,0 +1,16 @@
+# Netlify build & deploy configuration.
+# Portable by design: no account/site IDs are hard-coded here, so this repo
+# can be linked to any Netlify team/site (see README "Migracja").
+
+[build]
+  command = "npm run build"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Pretty URL for the CMS.
+[[redirects]]
+  from = "/admin"
+  to = "/admin/"
+  status = 301

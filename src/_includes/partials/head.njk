@@ -1,0 +1,22 @@
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or site.defaultTitle }}</title>
+  <meta name="description" content="{{ description or site.defaultDescription }}" />
+  <meta name="color-scheme" content="light" />
+
+  <meta property="og:type" content="{{ ogType or 'website' }}" />
+  <meta property="og:title" content="{{ title or site.defaultTitle }}" />
+  <meta property="og:description" content="{{ description or site.defaultDescription }}" />
+  {%- if ogImage %}
+  <meta property="og:image" content="{{ ogImage }}" />
+  {%- endif %}
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,400..900,0..100&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,400..700&display=swap"
+  />
+
+  <link rel="icon" href="/images/logo.png" type="image/png" />
+  <link rel="stylesheet" href="/css/style.css" />

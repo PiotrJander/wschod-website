@@ -1,0 +1,44 @@
+  <!-- ═════════════════ SITE HEADER ═════════════════ -->
+  <header class="site-header">
+    <div class="container row">
+      <a class="brand" href="/">
+        <svg class="brand-mark" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true">
+          <!-- Rising-sun logomark: half-circle on a base with rays. -->
+          <path d="M14 40h36c-1-9-9-16-18-16s-17 7-18 16z"/>
+          <path d="M8 44h48v4H8z"/>
+          <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none">
+            <path d="M32 12v4"/>
+            <path d="M19.5 16l2 3.5"/>
+            <path d="M44.5 16l-2 3.5"/>
+            <path d="M11 24l3 2"/>
+            <path d="M53 24l-3 2"/>
+          </g>
+        </svg>
+        wschód
+      </a>
+
+      <nav class="nav-primary" aria-label="Główna nawigacja">
+        {%- for item in nav %}
+        <a class="nav-link{% if item.cta %} nav-cta{% endif %}{% if page.url | startsWith(item.match) %} is-active{% endif %}" href="{{ item.url }}"{% if page.url | startsWith(item.match) %} aria-current="page"{% endif %}>{{ item.label }}</a>
+        {%- endfor %}
+      </nav>
+
+      <div class="nav-actions">
+        <a class="btn btn--ghost" href="{{ site.links.donate }}" target="_blank" rel="noopener">Wspieraj</a>
+        <button class="nav-mobile-toggle" id="navToggle" aria-label="Otwórz menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+            <path d="M4 7h16M4 12h16M4 17h16"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <nav class="nav-mobile" id="navMobile" aria-label="Nawigacja mobilna">
+    <button class="close" id="navClose" aria-label="Zamknij menu">×</button>
+    <a href="/">strona główna</a>
+    {%- for item in nav %}
+    <a href="{{ item.url }}">{{ item.label }}</a>
+    {%- endfor %}
+  </nav>

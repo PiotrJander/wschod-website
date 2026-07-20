@@ -1,0 +1,56 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Local editing: run `npm run cms` (decap-server) alongside `npm start`,
+# then open http://localhost:8080/admin/ — no auth required locally.
+local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+locale: "pl"
+
+collections:
+  - name: "posts"
+    label: "Artykuły"
+    label_singular: "Artykuł"
+    description: "Wpisy bloga wyświetlane na /blog/."
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "blog/{{slug}}/"
+    summary: "{{title}}"
+    sortable_fields: ["date", "title"]
+    fields:
+      - { label: "Tytuł", name: "title", widget: "string" }
+      - {
+          label: "Data",
+          name: "date",
+          widget: "datetime",
+          date_format: "YYYY-MM-DD",
+          time_format: false,
+          format: "YYYY-MM-DD",
+        }
+      - { label: "Kategoria", name: "category", widget: "string", default: "Aktualności" }
+      - { label: "Etykieta (np. „Lato 2025”)", name: "badge", widget: "string", required: false }
+      - { label: "Czas czytania", name: "readingTime", widget: "string", default: "3 min" }
+      - { label: "Autor", name: "author", widget: "string", default: "Zespół Inicjatywy WSCHÓD", required: false }
+      - { label: "Zdjęcie główne", name: "cover", widget: "image", choose_url: true }
+      - { label: "Opis zdjęcia (alt)", name: "coverAlt", widget: "string", required: false }
+      - { label: "Podpis zdjęcia", name: "credit", widget: "string", required: false }
+      - { label: "Zajawka (lead)", name: "excerpt", widget: "text" }
+      - { label: "Treść", name: "body", widget: "markdown" }
+
+  - name: "settings"
+    label: "Ustawienia"
+    description: "Globalne pliki i zasoby."
+    files:
+      - name: "plan"
+        label: "Plan Na Pokolenia (PDF)"
+        file: "src/_data/plan.json"
+        description: "Dokument PDF pobierany z całej strony."
+        fields:
+          - { label: "Plik PDF", name: "pdf", widget: "file" }
+          - { label: "Liczba stron", name: "pages", widget: "string", required: false }
+          - { label: "Rok", name: "year", widget: "string", required: false }

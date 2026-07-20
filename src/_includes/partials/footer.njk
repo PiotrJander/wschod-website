@@ -1,0 +1,69 @@
+  <!-- ═════════════════ SITE FOOTER ═════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display:inline-flex;align-items:center;gap:0.7rem;">
+            <svg width="36" height="36" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true" style="color: var(--on-blue);">
+              <path d="M14 40h36c-1-9-9-16-18-16s-17 7-18 16z"/>
+              <path d="M8 44h48v4H8z"/>
+              <g stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"><path d="M32 12v4"/><path d="M19.5 16l2 3.5"/><path d="M44.5 16l-2 3.5"/><path d="M11 24l3 2"/><path d="M53 24l-3 2"/></g>
+            </svg>
+            <span class="brand-name">wschód</span>
+          </div>
+          <p>
+            Inicjatywa WSCHÓD &mdash; oddolny, ogólnopolski ruch młodych aktywistek_ów.
+            Walczymy o godne i bezpieczne życie dla wszystkich.
+          </p>
+          <div class="footer-socials">
+            <a href="{{ site.links.instagram }}" target="_blank" rel="noopener" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="{{ site.links.tiktok }}" target="_blank" rel="noopener" aria-label="TikTok">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.5 6.5a5 5 0 0 1-3.5-1.5V14a5 5 0 1 1-5-5v2.5a2.5 2.5 0 1 0 2.5 2.5V2h2.5a3 3 0 0 0 3.5 3v1.5z"/></svg>
+            </a>
+            <a href="{{ site.links.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M13 22v-9h3l1-4h-4V7c0-1 .5-2 2-2h2V2c-.5 0-2-.2-3-.2-3 0-5 2-5 5V9H6v4h3v9h4z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Strona</h4>
+          <ul>
+            {%- for item in nav %}
+            <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+            {%- endfor %}
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Działaj</h4>
+          <ul>
+            <li><a href="{{ site.links.join }}" target="_blank" rel="noopener">Dołącz do ruchu</a></li>
+            <li><a href="{{ site.links.newsletter }}" target="_blank" rel="noopener">Newsletter</a></li>
+            <li><a href="{{ site.links.donate }}" target="_blank" rel="noopener">Wspieraj finansowo</a></li>
+            <li><a href="{{ plan.pdf }}" target="_blank">Pobierz manifest (PDF)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="mailto:kontakt@wschod.org">kontakt@wschod.org</a></li>
+            <li>Fundacja Inicjatywa Wschód</li>
+            <li>ul. Mikołaja Kopernika 30</li>
+            <li>00-336 Warszawa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© {{ site.buildYear }} Fundacja Inicjatywa Wschód</div>
+        <div class="legal">
+          <a href="{{ site.links.privacy }}" target="_blank" rel="noopener">Polityka prywatności</a>
+          <a href="{{ site.links.donationPolicy }}" target="_blank" rel="noopener">Polityka darowizn</a>
+        </div>
+      </div>
+    </div>
+  </footer>

@@ -1,0 +1,87 @@
+---
+layout: base.njk
+permalink: /blog/
+title: Artykuły — Inicjatywa WSCHÓD
+description: Relacje z naszych akcji, eseje, zaproszenia. Krótkie newsy i dłuższe teksty o tym, jak myśleć o polityce i kryzysach naszych czasów.
+---
+{%- set posts = collections.posts %}
+{%- set featured = posts[0] %}
+      <section class="blog-hero">
+        <div class="container">
+          <span class="eyebrow">strona</span>
+          <h1 style="margin-block-start: 1rem;">artykuły</h1>
+          <p>
+            Relacje z&nbsp;naszych akcji, eseje, zaproszenia. Krótkie newsy o&nbsp;tym,
+            co robi nasze ruch oraz dłuższe teksty o&nbsp;tym, jak myśleć o&nbsp;polityce
+            i&nbsp;kryzysach naszych czasów.
+          </p>
+        </div>
+      </section>
+
+      <section class="section panel--cream">
+        <div class="container">
+          {%- if featured %}
+          <article class="blog-featured reveal" style="margin-block-end: 2.5rem;">
+            <figure class="photo">
+              <img src="{{ featured.data.cover }}" alt="{{ featured.data.coverAlt or featured.data.title }}" loading="lazy" />
+            </figure>
+            <div class="body">
+              <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                <span class="tag tag--coral"><span class="dot"></span>{{ featured.data.category }}</span>
+                {%- if featured.data.badge %}<span class="tag tag--peach">{{ featured.data.badge }}</span>{%- endif %}
+              </div>
+              <h2>{{ featured.data.title }}</h2>
+              <p>{{ featured.data.excerpt }}</p>
+              <div class="meta">
+                <span>{{ featured.date | datePL }}</span>
+                <span>·</span>
+                <span>{{ featured.data.readingTime }} czytania</span>
+              </div>
+              <div>
+                <a class="btn btn--coral" href="{{ featured.url }}">Czytaj dalej <span class="arrow" aria-hidden="true">→</span></a>
+              </div>
+            </div>
+          </article>
+          {%- endif %}
+
+          {%- if posts.length > 1 %}
+          <div class="blog-grid">
+            {%- set tagColors = ["blue", "jade", "coral", "peach"] %}
+            {%- for post in posts %}
+            {%- if not loop.first %}
+            <article class="article-card reveal">
+              <figure class="photo">
+                <img src="{{ post.data.cover }}" alt="{{ post.data.coverAlt or post.data.title }}" loading="lazy" />
+              </figure>
+              <div class="body">
+                <div><span class="tag tag--{{ tagColors[loop.index0 % 4] }}"><span class="dot"></span>{{ post.data.category }}</span></div>
+                <h3>{{ post.data.title }}</h3>
+                <p>{{ post.data.excerpt }}</p>
+                <div class="meta"><span>{{ post.date | datePL }}</span><span>{{ post.data.readingTime }}</span></div>
+                <div><a class="btn btn--ghost" href="{{ post.url }}" style="color:var(--ink);border-color:var(--rule);font-size:0.78rem;padding:0.5rem 1rem;">Czytaj <span class="arrow" aria-hidden="true">→</span></a></div>
+              </div>
+            </article>
+            {%- endif %}
+            {%- endfor %}
+          </div>
+          {%- endif %}
+        </div>
+      </section>
+
+      <section class="section panel--blue">
+        <div class="container" style="display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;">
+          <div style="text-align:center;">
+            <span class="eyebrow" style="color: var(--amber); justify-content:center; display:inline-flex;">newsletter</span>
+            <h2 style="font-family: var(--font-serif); font-style: italic; font-variation-settings: 'SOFT' 100, 'opsz' 144; font-size: var(--fs-hero); color: var(--on-blue); margin-block-start: 1rem; max-width: 22ch; margin-inline:auto;">
+              Codzienna polityka, raz w&nbsp;tygodniu.
+            </h2>
+            <p style="color: oklch(0.96 0.02 80 / 0.85); max-width: 50ch; margin: 1.2rem auto 1.8rem;">
+              Krótki list co poniedziałek &mdash; analizy, zaproszenia, refleksje. Bez clickbaitu.
+            </p>
+            <form class="newsletter" style="margin-inline:auto;" action="{{ site.links.newsletter }}" method="get" target="_blank" onsubmit="event.preventDefault(); window.open(this.action, '_blank');">
+              <input type="email" placeholder="twój@email.pl" required aria-label="Adres email" />
+              <button type="submit">Zapisz się</button>
+            </form>
+          </div>
+        </div>
+      </section>

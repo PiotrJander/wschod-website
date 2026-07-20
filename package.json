@@ -1,0 +1,16 @@
+{
+  "name": "wschod-website",
+  "version": "1.0.0",
+  "description": "Inicjatywa WSCHÓD — strona (Eleventy + Decap CMS)",
+  "license": "MIT",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "cms": "decap-server"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6",
+    "decap-server": "^3.9.1"
+  }
+}
