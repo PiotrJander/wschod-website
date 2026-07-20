@@ -57,9 +57,12 @@ src/
   plan-na-pokolenia.njk # → /plan-na-pokolenia/
   blog.njk              # article list             → /blog/
   posts/                # articles (Markdown)      → /blog/<slug>/
-admin/                  # Decap CMS panel          → /admin/
-images/                 # static assets; images/uploads = CMS media
+  admin/                # Decap CMS panel          → /admin/
+  images/               # static assets; images/uploads = CMS media
 ```
+
+Everything the site is made of lives under `src/`. Only tooling/config stays at
+the repo root (`eleventy.config.js`, `package.json`, `netlify.toml`, `.npmrc`).
 
 Pages work **without JavaScript** (real URLs, the footer year is rendered on the
 server). JS only adds the mobile menu and the copy-account-number button.

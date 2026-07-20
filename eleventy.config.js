@@ -1,8 +1,14 @@
 module.exports = function (eleventyConfig) {
-  // Static assets copied verbatim to the output.
-  eleventyConfig.addPassthroughCopy({ images: "images", admin: "admin" });
+  // Static assets copied verbatim to the output. Paths are inside the input
+  // dir, so Eleventy strips "src/" — e.g. src/images → /images.
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/admin");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+
+  // The Decap admin is copied verbatim (above); don't treat its index.html as
+  // a template.
+  eleventyConfig.ignores.add("src/admin/**");
 
   // Re-run the dev server when these change.
   eleventyConfig.addWatchTarget("src/css");

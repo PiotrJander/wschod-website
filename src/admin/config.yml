@@ -6,7 +6,7 @@ backend:
 # then open http://localhost:8080/admin/ — no auth required locally.
 local_backend: true
 
-media_folder: "images/uploads"
+media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
 locale: "pl"
