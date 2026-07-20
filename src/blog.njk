@@ -30,7 +30,7 @@ description: Relacje z naszych akcji, eseje, zaproszenia. Krótkie newsy i dłu�
                 <span class="tag tag--coral"><span class="dot"></span>{{ featured.data.category }}</span>
                 {%- if featured.data.badge %}<span class="tag tag--peach">{{ featured.data.badge }}</span>{%- endif %}
               </div>
-              <h2>{{ featured.data.title }}</h2>
+              <h2><a href="{{ featured.url }}">{{ featured.data.title }}</a></h2>
               <p>{{ featured.data.excerpt }}</p>
               <div class="meta">
                 <span>{{ featured.date | datePL }}</span>
@@ -55,7 +55,7 @@ description: Relacje z naszych akcji, eseje, zaproszenia. Krótkie newsy i dłu�
               </figure>
               <div class="body">
                 <div><span class="tag tag--{{ tagColors[loop.index0 % 4] }}"><span class="dot"></span>{{ post.data.category }}</span></div>
-                <h3>{{ post.data.title }}</h3>
+                <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
                 <p>{{ post.data.excerpt }}</p>
                 <div class="meta"><span>{{ post.date | datePL }}</span><span>{{ post.data.readingTime }}</span></div>
                 <div><a class="btn btn--ghost" href="{{ post.url }}" style="color:var(--ink);border-color:var(--rule);font-size:0.78rem;padding:0.5rem 1rem;">Czytaj <span class="arrow" aria-hidden="true">→</span></a></div>

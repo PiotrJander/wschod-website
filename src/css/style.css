@@ -1132,6 +1132,13 @@
     .blog-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
+  /* Clickable article titles inherit their heading colour, with a coral
+     hover cue. */
+  .blog-featured h2 a,
+  .article-card h3 a { transition: color .2s ease; }
+  .blog-featured h2 a:hover,
+  .article-card h3 a:hover { color: var(--coral-deep); }
+
   /* ═══════════════════════════════════════════════════════════
                    BLOG POST · single article
      A calm, editorial reading experience that keeps the loud
@@ -1146,12 +1153,12 @@
     isolation: isolate;
   }
   .post-hero::before {
-    /* soft rising-sun glow behind the title */
+    /* soft rising-sun glow behind the title — anchored at the top so it
+       fades smoothly into the blue (no visible seam mid-hero). */
     content: "";
     position: absolute;
-    inset: auto -10% -60% -10%;
-    height: 120%;
-    background: radial-gradient(60% 80% at 30% 0%, oklch(0.82 0.15 80 / 0.28), transparent 70%);
+    inset: 0;
+    background: radial-gradient(75% 65% at 22% -10%, oklch(0.82 0.15 80 / 0.22), oklch(0.82 0.15 80 / 0) 60%);
     z-index: -1;
   }
   .post-hero .kicker {
