@@ -58,16 +58,8 @@ src/
   blog.njk              # article list             → /blog/
   posts/                # articles (Markdown)      → /blog/<slug>/
   admin/                # Decap CMS panel          → /admin/
-  images/               # static assets; images/uploads = CMS media
+  images/               # all media (brand assets + CMS uploads)
 ```
-
-Everything the site is made of lives under `src/`. Only tooling/config stays at
-the repo root (`eleventy.config.js`, `package.json`, `netlify.toml`, `.npmrc`).
-
-Pages work **without JavaScript** (real URLs, the footer year is rendered on the
-server). JS only adds the mobile menu and the copy-account-number button.
-Navigation between pages uses cross-document **View Transitions**
-(`@view-transition { navigation: auto; }`).
 
 ## Deploying to Netlify
 
@@ -92,19 +84,3 @@ In production Decap uses `git-gateway` + Netlify Identity:
 3. Set **Identity → Registration** to *Invite only* and invite editors
    (**Identity → Invite users**).
 4. An editor opens `/admin/`, accepts the invitation and logs in.
-
-## Migrating to another GitHub / Netlify account
-
-The repo is intentionally portable — it contains no hard-coded account IDs:
-
-1. **GitHub**: create a new repo on the target account and update the remote:
-   ```bash
-   git remote set-url origin git@github.com:NEW-ACCOUNT/wschod-website.git
-   git push -u origin main
-   ```
-   In `admin/config.yml`, `backend.branch` is `main` — adjust if you use another.
-2. **Netlify**: on the target account run `netlify init` (or “Add new site →
-   Import from Git”), then repeat the “Enabling the CMS” steps. `netlify.toml`
-   works unchanged.
-3. Update `site.url` in `src/_data/site.js` to the target address (used in
-   Open Graph meta tags and share links).

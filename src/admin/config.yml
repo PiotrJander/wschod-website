@@ -6,8 +6,10 @@ backend:
 # then open http://localhost:8080/admin/ — no auth required locally.
 local_backend: true
 
-media_folder: "src/images/uploads"
-public_folder: "/images/uploads"
+# The media library lists everything in this folder, so all existing brand
+# photos in src/images are pickable and new uploads land alongside them.
+media_folder: "src/images"
+public_folder: "/images"
 
 locale: "pl"
 
