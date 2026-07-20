@@ -1,107 +1,107 @@
-# Inicjatywa WSCHÓD — strona
+# Inicjatywa WSCHÓD — website
 
-Statyczna strona zbudowana w [Eleventy](https://www.11ty.dev/) z systemem
-zarządzania treścią [Decap CMS](https://decapcms.org/) (dawniej Netlify CMS).
-Hostowana na [Netlify](https://www.netlify.com/).
+A static site built with [Eleventy](https://www.11ty.dev/) and managed with
+[Decap CMS](https://decapcms.org/) (formerly Netlify CMS). Hosted on
+[Netlify](https://www.netlify.com/).
 
-Dynamiczna jest wyłącznie sekcja bloga (artykuły + zdjęcia) oraz plik PDF
-„Plan Na Pokolenia” — wszystko edytowalne przez panel `/admin/`.
+The only dynamic content is the blog (articles + photos) and the
+“Plan Na Pokolenia” PDF — everything is editable through the `/admin/` panel.
 
-## Wymagania
+## Requirements
 
-- Node.js 20+ (repo zawiera `.npmrc` wskazujące na `https://registry.npmjs.org/`)
+- Node.js 20+ (the repo ships an `.npmrc` pointing at `https://registry.npmjs.org/`)
 
-## Lokalne uruchomienie
+## Local development
 
 ```bash
 npm install
-npm start            # serwer deweloperski na http://localhost:8080
+npm start            # dev server at http://localhost:8080
 ```
 
-Budowanie do katalogu `_site/`:
+Build to the `_site/` directory:
 
 ```bash
 npm run build
 ```
 
-### Edycja treści lokalnie (bez logowania)
+### Editing content locally (no login)
 
-Decap potrafi zapisywać zmiany bezpośrednio do lokalnych plików dzięki
-`local_backend: true` w `admin/config.yml`. W dwóch terminalach:
+Decap can write changes straight to local files thanks to `local_backend: true`
+in `admin/config.yml`. In two terminals:
 
 ```bash
-npm start            # terminal 1 — strona
-npm run cms          # terminal 2 — proxy decap-server
+npm start            # terminal 1 — the site
+npm run cms          # terminal 2 — the decap-server proxy
 ```
 
-Następnie otwórz <http://localhost:8080/admin/>. Zmiany zapisują się do
-plików w `src/posts/` oraz `src/_data/plan.json`.
+Then open <http://localhost:8080/admin/>. Changes are saved to files in
+`src/posts/` and `src/_data/plan.json`.
 
-## Struktura projektu
+## Project structure
 
 ```
 src/
   _includes/
-    base.njk            # główny layout (head + header + footer + skrypty)
-    post.njk            # layout pojedynczego artykułu
-    partials/           # head, header, footer (wspólny „chrome”)
+    base.njk            # main layout (head + header + footer + scripts)
+    post.njk            # single blog-post layout
+    partials/           # head, header, footer (shared chrome)
   _data/
-    site.js             # dane globalne (rok, linki społecznościowe)
-    nav.js              # nawigacja
-    plan.json           # ścieżka do PDF (zarządzane przez Decap)
-  css/style.css         # cały CSS (View Transitions między stronami)
-  js/main.js            # progresywne ulepszenia (menu mobilne, kopiowanie IBAN)
-  index.njk             # strona główna            → /
+    site.js             # global data (year, social links)
+    nav.js              # navigation
+    plan.json           # path to the PDF (managed by Decap)
+  css/style.css         # all CSS (cross-document View Transitions)
+  js/main.js            # progressive enhancements (mobile menu, copy IBAN)
+  index.njk             # home                     → /
   kim-jestesmy.njk      # → /kim-jestesmy/
   o-co-walczymy.njk     # → /o-co-walczymy/
   plan-na-pokolenia.njk # → /plan-na-pokolenia/
-  blog.njk              # lista artykułów          → /blog/
-  posts/                # artykuły (Markdown)      → /blog/<slug>/
-admin/                  # panel Decap CMS          → /admin/
-images/                 # zasoby statyczne; images/uploads = media z CMS
+  blog.njk              # article list             → /blog/
+  posts/                # articles (Markdown)      → /blog/<slug>/
+admin/                  # Decap CMS panel          → /admin/
+images/                 # static assets; images/uploads = CMS media
 ```
 
-Strony działają **bez JavaScriptu** (prawdziwe adresy, rok w stopce renderowany
-serwerowo). JS dodaje jedynie menu mobilne i kopiowanie numeru konta.
-Przejścia między stronami korzystają z cross‑document **View Transitions**
+Pages work **without JavaScript** (real URLs, the footer year is rendered on the
+server). JS only adds the mobile menu and the copy-account-number button.
+Navigation between pages uses cross-document **View Transitions**
 (`@view-transition { navigation: auto; }`).
 
-## Wdrożenie na Netlify
+## Deploying to Netlify
 
-1. Zaloguj się i połącz repo:
+1. Log in and link the repo:
    ```bash
    netlify login
-   netlify init          # wybierz „Create & configure a new site”, połącz z GitHub
+   netlify init          # choose “Create & configure a new site”, connect to GitHub
    ```
-   Build command (`npm run build`) i katalog publikacji (`_site`) są już
-   zdefiniowane w `netlify.toml`.
-2. Wdróż produkcyjnie:
+   The build command (`npm run build`) and publish directory (`_site`) are
+   already defined in `netlify.toml`.
+2. Deploy to production:
    ```bash
    netlify deploy --build --prod
    ```
 
-### Włączenie CMS (jednorazowo, w panelu Netlify)
+### Enabling the CMS (one-time, in the Netlify dashboard)
 
-Decap w produkcji używa `git-gateway` + Netlify Identity:
+In production Decap uses `git-gateway` + Netlify Identity:
 
 1. **Site settings → Identity → Enable Identity**.
 2. **Identity → Services → Git Gateway → Enable Git Gateway**.
-3. **Identity → Registration** ustaw na *Invite only* i zaproś redaktorów
+3. Set **Identity → Registration** to *Invite only* and invite editors
    (**Identity → Invite users**).
-4. Redaktor otwiera `/admin/`, akceptuje zaproszenie i loguje się.
+4. An editor opens `/admin/`, accepts the invitation and logs in.
 
-## Migracja na inne konto GitHub / Netlify
+## Migrating to another GitHub / Netlify account
 
-Repo jest celowo „przenośne” — nie zawiera zaszytych identyfikatorów konta:
+The repo is intentionally portable — it contains no hard-coded account IDs:
 
-1. **GitHub**: utwórz nowe repo na docelowym koncie i zmień remote:
+1. **GitHub**: create a new repo on the target account and update the remote:
    ```bash
-   git remote set-url origin git@github.com:NOWE-KONTO/wschod-website.git
+   git remote set-url origin git@github.com:NEW-ACCOUNT/wschod-website.git
    git push -u origin main
    ```
-   W `admin/config.yml` `backend.branch` to `main` — dostosuj, jeśli inny.
-2. **Netlify**: na docelowym koncie `netlify init` (lub „Add new site → Import
-   from Git”), a następnie powtórz kroki „Włączenie CMS”. `netlify.toml`
-   zadziała bez zmian.
-3. Zaktualizuj `site.url` w `src/_data/site.js` na docelowy adres (używane w
-   metatagach Open Graph i linkach udostępniania).
+   In `admin/config.yml`, `backend.branch` is `main` — adjust if you use another.
+2. **Netlify**: on the target account run `netlify init` (or “Add new site →
+   Import from Git”), then repeat the “Enabling the CMS” steps. `netlify.toml`
+   works unchanged.
+3. Update `site.url` in `src/_data/site.js` to the target address (used in
+   Open Graph meta tags and share links).
